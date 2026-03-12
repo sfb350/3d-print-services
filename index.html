@@ -5,100 +5,101 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 
 <style>
-
 body{
-font-family:Arial, Helvetica, sans-serif;
-margin:0;
-background:#0f172a;
-color:white;
+  font-family:Arial, Helvetica, sans-serif;
+  margin:0;
+  background:#0f172a;
+  color:white;
 }
 
 header{
-text-align:center;
-padding:50px 20px;
-background:#1e293b;
+  text-align:center;
+  padding:50px 20px;
+  background:#1e293b;
 }
 
 header h1{
-font-size:40px;
-margin-bottom:10px;
+  font-size:40px;
+  margin-bottom:10px;
 }
 
 header p{
-font-size:18px;
-opacity:.9;
+  font-size:18px;
+  opacity:.9;
 }
 
 .container{
-max-width:650px;
-margin:40px auto;
-background:white;
-color:black;
-padding:35px;
-border-radius:12px;
-box-shadow:0 10px 30px rgba(0,0,0,.4);
+  max-width:650px;
+  margin:40px auto;
+  background:white;
+  color:black;
+  padding:35px;
+  border-radius:12px;
+  box-shadow:0 10px 30px rgba(0,0,0,.4);
 }
 
 label{
-font-weight:bold;
-display:block;
-margin-top:15px;
+  font-weight:bold;
+  display:block;
+  margin-top:15px;
 }
 
 input,select{
-width:100%;
-padding:12px;
-margin-top:6px;
-border-radius:6px;
-border:1px solid #ccc;
-font-size:14px;
+  width:100%;
+  padding:12px;
+  margin-top:6px;
+  border-radius:6px;
+  border:1px solid #ccc;
+  font-size:14px;
 }
 
 button{
-width:100%;
-padding:16px;
-margin-top:25px;
-background:#22c55e;
-border:none;
-color:white;
-font-size:16px;
-font-weight:bold;
-border-radius:8px;
-cursor:pointer;
+  width:100%;
+  padding:16px;
+  margin-top:25px;
+  background:#22c55e;
+  border:none;
+  color:white;
+  font-size:16px;
+  font-weight:bold;
+  border-radius:8px;
+  cursor:pointer;
 }
 
 button:hover{
-background:#16a34a;
+  background:#16a34a;
 }
 
-.note{
-background:#f1f5f9;
-padding:12px;
-border-radius:6px;
-margin-bottom:15px;
-font-size:14px;
+.makerworld{
+  background:#f1f5f9;
+  padding:12px;
+  border-radius:6px;
+  margin-bottom:15px;
+  font-size:14px;
 }
 
 footer{
-text-align:center;
-padding:30px;
-opacity:.8;
+  text-align:center;
+  padding:30px;
+  opacity:.8;
 }
-
 </style>
 </head>
 
 <body>
 
 <header>
-<h1>Abe's 3D Printing</h1>
-<p>Send a model and request a custom print</p>
+  <h1>Abe's 3D Printing</h1>
+  <p>Send a model and request a custom 3D print</p>
 </header>
 
 <div class="container">
 
-<div class="note">
-Paste the **exact model name from MakerWorld or another site**, pick colors, and request a price.
+<div class="makerworld">
+  <strong>What is MakerWorld?</strong><br>
+  MakerWorld is a website where people share 3D models for printing. 
+  You can browse, find a model you like, and use the exact model name here.
+  <br><a href="https://makerworld.com" target="_blank">Visit MakerWorld →</a>
 </div>
 
 <form action="https://formspree.io/f/meerkgkn" method="POST">
@@ -109,7 +110,7 @@ Paste the **exact model name from MakerWorld or another site**, pick colors, and
 <label>Your Email</label>
 <input type="email" name="email" required>
 
-<label>Model Name (from MakerWorld / Printables / Thingiverse)</label>
+<label>Model Name (from MakerWorld / Thingiverse / Printables)</label>
 <input type="text" name="model_name" placeholder="Example: Articulated Dragon by Cinderwing3D" required>
 
 <label>Color</label>
@@ -123,10 +124,10 @@ Paste the **exact model name from MakerWorld or another site**, pick colors, and
 <option>Other (describe in email)</option>
 </select>
 
-<label>How Many?</label>
+<label>Quantity</label>
 <input type="number" name="quantity" value="1" min="1">
 
-<label>Request a resonable price ($)</label>
+<label>Price You Are Hoping For ($)</label>
 <input type="number" name="requested_price" placeholder="Example: 10">
 
 <label>When Do You Need It?</label>
