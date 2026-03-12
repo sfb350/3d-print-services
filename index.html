@@ -1,74 +1,146 @@
 <!DOCTYPE html>
 <html>
 <head>
-<title>3D Print Request</title>
+<title>Abe's 3D Printing</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
 
 <style>
 
 body{
-font-family:Arial;
-background:#f4f4f4;
+font-family:Arial, Helvetica, sans-serif;
+margin:0;
+background:#0f172a;
+color:white;
+}
+
+header{
 text-align:center;
+padding:50px 20px;
+background:#1e293b;
 }
 
-.box{
+header h1{
+font-size:40px;
+margin-bottom:10px;
+}
+
+header p{
+font-size:18px;
+opacity:.9;
+}
+
+.container{
+max-width:650px;
+margin:40px auto;
 background:white;
-width:500px;
-margin:auto;
-padding:30px;
-margin-top:50px;
-border-radius:10px;
+color:black;
+padding:35px;
+border-radius:12px;
+box-shadow:0 10px 30px rgba(0,0,0,.4);
 }
 
-input, textarea, select{
+label{
+font-weight:bold;
+display:block;
+margin-top:15px;
+}
+
+input,select{
 width:100%;
-padding:10px;
-margin:10px 0;
+padding:12px;
+margin-top:6px;
+border-radius:6px;
+border:1px solid #ccc;
+font-size:14px;
 }
 
 button{
-background:#28a745;
-color:white;
+width:100%;
+padding:16px;
+margin-top:25px;
+background:#22c55e;
 border:none;
-padding:12px;
+color:white;
 font-size:16px;
+font-weight:bold;
+border-radius:8px;
 cursor:pointer;
 }
 
-</style>
+button:hover{
+background:#16a34a;
+}
 
+.note{
+background:#f1f5f9;
+padding:12px;
+border-radius:6px;
+margin-bottom:15px;
+font-size:14px;
+}
+
+footer{
+text-align:center;
+padding:30px;
+opacity:.8;
+}
+
+</style>
 </head>
 
 <body>
 
-<div class="box">
+<header>
+<h1>Abe's 3D Printing</h1>
+<p>Send a model and request a custom print</p>
+</header>
 
-<h2>Request a 3D Print</h2>
+<div class="container">
 
-<form action="https://formspree.io/f/meerkgkn" method="POST" enctype="multipart/form-data">
+<div class="note">
+Paste the **exact model name from MakerWorld or another site**, pick colors, and request a price.
+</div>
 
-<input type="text" name="name" placeholder="Name" required>
+<form action="https://formspree.io/f/meerkgkn" method="POST">
 
-<input type="email" name="email" placeholder="Email" required>
+<label>Your Name</label>
+<input type="text" name="name" required>
 
-<select name="material">
-<option>PLA</option>
-<option>PETG</option>
-<option>ABS</option>
-<option>TPU</option>
+<label>Your Email</label>
+<input type="email" name="email" required>
+
+<label>Model Name (from MakerWorld / Printables / Thingiverse)</label>
+<input type="text" name="model_name" placeholder="Example: Articulated Dragon by Cinderwing3D" required>
+
+<label>Color</label>
+<select name="color">
+<option>Black</option>
+<option>White</option>
+<option>Red</option>
+<option>Blue</option>
+<option>Green</option>
+<option>Rainbow</option>
+<option>Other (describe in email)</option>
 </select>
 
-<input type="number" name="quantity" placeholder="Quantity">
+<label>How Many?</label>
+<input type="number" name="quantity" value="1" min="1">
 
-<textarea name="description" placeholder="Describe your print"></textarea>
+<label>Price You Are Hoping For ($)</label>
+<input type="number" name="requested_price" placeholder="Example: 10">
 
-<input type="file" name="file">
+<label>When Do You Need It?</label>
+<input type="date" name="deadline">
 
-<button type="submit">Request Quote</button>
+<button type="submit">Send Print Request</button>
 
 </form>
 
 </div>
+
+<footer>
+© 2026 Abe's 3D Printing
+</footer>
 
 </body>
 </html>
